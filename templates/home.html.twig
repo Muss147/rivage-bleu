@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le passage lumière{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+    .leaflet-control-attribution.leaflet-control {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<section id="loader" class="loader flex justify-center items-center bg-white">
+    <div class="grid justify-center gap-8" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="300">
+        <img alt="Rivage Bleu" src="{{asset('assets/medias/logos/Logo_Rivage_Bleu.png')}}" class="max-h-32">
+        <div class="grid justify-center gap-4">
+            <span class="font-primary-thin text-pantone uppercase">Un projet de</span>
+            <img alt="PFO Immobilier" src="{{asset('assets/medias/logos/logoPFO.svg')}}" class="h-8">
+        </div>
+    </div>
+</section>
+
+<section id="accueil" class="carrousel relative">
+    <div class="absolute hidden xl:block inset-y-0 right-0 w-2xl bg-pantone"></div>
+    <div class="absolute inset-0 lg:hidden bg-center bg-cover bg-no-repeat" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.4)), url('{{ asset('assets/medias/bg/bord-de-lagune.webp') }}');"></div>
+    <!-- data-aos="zoom-in" data-aos-delay="700" data-aos-duration="700" -->
+    <div class="max-w-10/12 mx-auto">
+        <div class="grid lg:grid-cols-2 gap-8 h-screen">
+            <div class="carrousel__title flex flex-col justify-center toFade" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="800">
+                <div class="flex flex-col gap-8 lg:gap-20 w-full text-pantone text-center lg:text-left">
+                    <h1 class="w-full leading-tight">Vivez l'exception en bord de lagune</h1>
+                    <p class="lg:max-w-xl">Découvrez Rivage Bleu, un quartier résidentiel haut de gamme et sécurisé,
+                    situé à Grand Bassam, dans un cadre naturel rare entre lagune et végétation.</p>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center justify-end" data-aos="fade-left" data-aos-delay="1500" data-aos-duration="800">
+                <img alt="Image" src="{{asset('assets/medias/bg/bord-de-lagune.webp')}}" class="!w-full h-2/3 rounded-md">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="presentation" class="lg:h-screen py-12">
+    <div class="max-w-10/12 mx-auto flex items-center h-full">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div class="flex flex-col gap-10">
+                <h2 class="w-full leading-tight">Découvrez un cadre unique</h2>
+                <div class="lg:max-w-lg">
+                    <p class="mb-2 lg:mb-8">Rivage Bleu est un quartier résidentiel haut de gamme s’étendant sur
+                    plus de 3 hectares en bord de lagune. Il propose 43 lots viabilisés et
+                    immédiatement constructibles, offrant un cadre de vie harmonieux,
+                    sécurisé et durable.</p>
+                    <p class="mb-2 lg:mb-8">Les voiries arborées, les espaces verts et les aires de jeux favorisent un
+                    confort quotidien dans un environnement paisible.</p>
+                    <p class="mb-2 lg:mb-8">Un règlement d’urbanisme garantit la cohérence architecturale des
+                    futures villas, tandis que la résidence clôturée et surveillée 24h/24
+                    assure sérénité et intimité.</p>
+                    <p class="mb-2 lg:mb-8">Pensé pour allier nature et modernité, Rivage Bleu incarne l’équilibre
+                    parfait entre luxe, sécurité et bien-être, faisant de Grand-Bassam un
+                    lieu d’exception où chaque détail re\ète la qualité de vie recherchée</p>
+                </div>
+            </div>
+            <div class="pr-20">
+                <div class="flex flex-col gap-12">
+                    <img alt="Image" src="{{asset('assets/medias/bg/cadre-unique.webp')}}" class="">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-12 font-secondary-light-italic text-xs">
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/svg/supperficie.svg')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">3 Ha</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/svg/lots.svg')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">43 lots prêts à construire</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/svg/residence-securisee.svg')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">Residence securisée</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/svg/architecture-urbaine.svg')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">Cohérence architecturale urbaine</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/svg/vu-panoramique.svg')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">Lots avec vu panoramique sur la lagune</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/svg/promenade-arboree.svg')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">1,5 km de promenade arborée</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/svg/aire-de-jeux.svg')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">Aire de jeux</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/svg/espace-detente.svg')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">Espace détente au bord de la lagune</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="localisation" class="lg:h-screen py-12">
+    <div class="max-w-10/12 mx-auto flex items-center h-full">
+        <div class="grid lg:grid-cols-4 gap-8">
+            <div class="lg:col-span-3">
+                <h2 class="w-full leading-tight mb-8">Localisation</h2>
+                <div class="flex flex-col gap-12">
+                    <img alt="Image" src="{{asset('assets/medias/bg/localisation.webp')}}" class="">
+                </div>
+            </div>
+            <div class="lg:col-span-1 bg-pantone py-8 px-12 space-y-8 text-white">
+                <h5 class="uppercase border-b border-white lg:w-52">Un emplacement stratégique, entre ville et nature</h5>
+                <p class="mb-2 lg:mb-8">Situé à seulement 20 minutes d’Abidjan, Rivage Bleu bénéficie d’un accès direct par l’autoroute de
+                Bassam. En bord de lagune, ce quartier résidentiel allie calme, nature et connectivité. Proche de
+                commerces, écoles, loisirs et plages emblématiques, il s’inscrit dans une zone en pleine transformation</p>
+                
+                <div class="grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-4 gap-y-12 font-secondary-light-italic text-xs mt-8">
+                    <div class="flex gap-3">
+                        <img src="{{asset('assets/medias/icones/svg/itineraire.svg')}}" class="size-12 !max-w-12 !object-contain">
+                        <span class="border-t border-pantone">20 min d’Abidjan</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <img src="{{asset('assets/medias/icones/svg/aeroport.svg')}}" class="size-12 !max-w-12 !object-contain">
+                        <span class="border-t border-pantone">25 min de L’aéroport international FHB</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <img src="{{asset('assets/medias/icones/svg/plages.svg')}}" class="size-12 !max-w-12 !object-contain">
+                        <span class="border-t border-pantone">Plages à proximité</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Form Loader -->
+<div id="f_loader" class="f_loader-container" style="display: none;">
+    <div class="f_loader"></div>
+</div>
+
+<!-- Modal de message -->
+<div id="modal" class="modal">
+    <p id="modal-message"></p>
+    <button class="btn close-btn">OK</button>
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+AOS.init();
+</script>
+{% endblock %}
