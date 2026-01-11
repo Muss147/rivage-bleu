@@ -3,3 +3,71 @@
 @plugin "flowbite/plugin";
 @source "../../node_modules/flowbite";
 @source "../../node_modules/flowbite-datepicker";
+
+@layer utilities {
+  .perspective {
+    perspective: 1200px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+@layer components {
+
+  .step {
+    @apply border-l-2 border-l-[#165889] pl-8 py-10 transition-colors duration-300;
+  }
+
+  .step-fill {
+    @apply absolute inset-y-0 left-0 w-full bg-[#165889]
+           scale-x-0 origin-left
+           transition-transform duration-500 ease-out;
+    z-index: 0;
+  }
+
+  /* Texte blanc quand rempli */
+  .step:hover {
+    @apply text-white;
+  }
+
+  .step:hover .step-fill {
+    transform: scaleX(1);
+    scale: 1;
+  }
+
+  .step:hover .step-fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    border-top: 93px solid white;
+    border-bottom: 93px solid white;
+    border-left: 28px solid #165889;
+  }
+
+  /* 💡 MAGIC : remplit aussi les étapes précédentes */
+  .security-steps:has(.step:nth-child(2):hover) .step:nth-child(1) .step-fill,
+  .security-steps:has(.step:nth-child(3):hover) .step:nth-child(1) .step-fill,
+  .security-steps:has(.step:nth-child(3):hover) .step:nth-child(2) .step-fill {
+    transform: scaleX(1);
+    scale: 1;
+  }
+
+  .security-steps:has(.step:nth-child(2):hover) .step:nth-child(1),
+  .security-steps:has(.step:nth-child(3):hover) .step:nth-child(1),
+  .security-steps:has(.step:nth-child(3):hover) .step:nth-child(2) {
+    @apply text-white;
+  }
+}

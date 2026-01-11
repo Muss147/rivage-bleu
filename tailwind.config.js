@@ -10,6 +10,12 @@ module.exports = {
       colors: {
         pantone: "#165889",
       },
+      borderColor: {
+        pantone: "#165889",
+      },
+      backgroundColor: {
+        pantone: "#165889",
+      },
     },
   },
   plugins: [],
