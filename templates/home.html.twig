@@ -304,22 +304,22 @@
                 <br class="hidden md:block"> dans la réalisation de votre projet à Rivage Bleu.</p>
             </div>
             <div class="relative">
-                <div class="absolute top-0 right-0 w-full h-fit bg-white/80 space-y-12 py-10 px-12">
+                <div class="relative lg:absolute top-0 right-0 w-full h-fit bg-white/80 space-y-12 p-8 sm:py-10 sm:px-12">
                     <div class="flex items-center justify-center gap-8">
                         <img alt="icon" src="{{asset('assets/medias/icones/svg/contact.svg')}}" class="size-8">
                         <h3 class="text-2xl font-bold">Contact</h3>
                     </div>
-                    <form action="" method="post" class="grid sm:grid-cols-2 gap-x-10 gap-y-8">
-                        <div class="">
+                    <form action="" method="post" class="grid grid-cols-2 gap-x-10 gap-y-8">
+                        <div class="col-span-2 sm:col-span-1">
                             <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="nom" placeholder="Nom ﹡">
                         </div>
-                        <div class="">
+                        <div class="col-span-2 sm:col-span-1">
                             <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="prenom" placeholder="Prénoms ﹡">
                         </div>
-                        <div class="">
+                        <div class="col-span-2 sm:col-span-1">
                             <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="email" name="email" placeholder="Email ﹡">
                         </div>
-                        <div class="grid grid-cols-3 gap-4">
+                        <div class="col-span-2 sm:col-span-1 grid grid-cols-3 gap-4">
                             <input class="col-span-1 h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="code_pays" placeholder="Code pays">
                             <input class="col-span-2 h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="telephone" placeholder="Numéro de téléphone ﹡">
                         </div>
@@ -330,7 +330,7 @@
                                 <span class="text-xs">J’accepte que le groupe de Rivage Bleu collecte mes données personnelles afin de m’adresser ses
                                 communications en lien avec mon projet. Ces données ne seront jamais à aucune autre société.</span>
                             </label>
-                            <div class="center md:float-end"><button type="submit" class="bg-pantone uppercase text-center text-white py-2 s px-10">Envoyer</button></div>
+                            <div class="center md:float-end w-full"><button type="submit" class="bg-pantone uppercase text-center text-white w-full py-2 s px-10">Envoyer</button></div>
                         </div>
                     </form>
                 </div>

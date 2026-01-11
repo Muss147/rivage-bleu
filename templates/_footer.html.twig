@@ -1,2 +1,36 @@
-<footer id="footer" class="footer">
+<footer id="footer" class="bg-pantone font-primary py-8">
+    <div class="max-w-10/12 mx-auto space-y-14 text-white">
+        <div class="md:max-w-xl">
+            <a href="" class="flex items-center justify-between gap-2">
+                <h3 class="text-3xl !capitalize">Télécharger notre brochure</h3>
+                <img alt="" src="{{asset('assets/medias/icones/svg/download.svg')}}" class="size-8">
+            </a>
+            <nav class="border-t-2 border-white mt-6">
+                <ul class="list-none flex flex-wrap sm:flex-nowrap gap-8 sm:gap-14 mt-6">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#accueil">Présentation du projet</a></li>
+                    <li><a href="#accueil">Localisation</a></li>
+                    <li><a href="#accueil">Lots</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="grid md:grid-cols-3 w-full">
+            <div class="border-b border-white py-4 flex flex-col justify-end gap-4">
+                <div class="flex gap-4">
+                    <a href=""><img alt="" src="{{asset('assets/medias/icones/svg/fb.svg')}}" class="size-8"></a>
+                    <a href=""><img alt="" src="{{asset('assets/medias/icones/svg/in.svg')}}" class="size-8"></a>
+                </div>
+                <span class="text-lg">PFO Immobilier</span>
+            </div>
+            <div class="flex justify-center items-end">
+                <span class="text-xs">©2025, All right reserved</span>
+            </div>
+            <div class="border-b border-white py-4 flex flex-col md:items-end gap-4">
+                <div class="flex gpa-4">
+                    <a href=""><img alt="Ribage Bleu" src="{{asset('assets/medias/logos/Logo_Rivage_Bleu_white.png')}}" class="h-16"></a>
+                </div>
+                <span class="text-lg">Grand‒Bassam</span>
+            </div>
+        </div>
+    </div>
 </footer>
