@@ -8,14 +8,20 @@
     transition-colors
     duration-300
     ease-in-out
+    shadow-md
     ">
     <div class="max-w-10/12 mx-auto flex justify-between items-center gap-10 py-4">
         <div class="flex items-center gap-4 md:gap-10 xl:gap-20">
-            <a class="logo flex-none" href="">
+            <a class="logo flex-none z-50" href="">
                 <img class="h-10" src="{{ asset('assets/medias/logos/Logo_Rivage_Bleu.png') }}" alt="LPL" height="30px">
             </a>
-            <nav class="absolute inset-x-0 top-0 lg:relative w-full navbar text-pantone font-bold">
-                <ul class="hidden lg:flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-10 xl:gap-20 list-none uppercase h-full">
+            <nav class="absolute inset-x-0 top-0 lg:relative w-full navbar text-pantone font-bold bg-white navbar__menu">
+                <ul class="flex flex-col mt-20 py-8 border-t border-pantone 
+                    lg:flex-row 
+                    lg:mt-0 
+                    lg:py-0
+                    lg:border-none 
+                    items-center justify-between gap-8 md:gap-10 xl:gap-20 list-none uppercase h-full">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#presentation">Présentation du projet</a></li>
                     <li><a href="#localisation">Localisation</a></li>
@@ -23,12 +29,12 @@
                 </ul>
             </nav>
         </div>
-        <div class="mobil__menu uppercase">
-            <a href="{{asset('assets/docs/Plaquette_Le_Passage_Lumiere.pdf')}}" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-pantone !text-white hover:shadow-md download" download>
+        <div class="mobil__menu uppercase z-50">
+            <a href="{{asset('assets/docs/plaquette_rivage_bleu.pdf')}}" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-pantone !text-white hover:shadow-md download" download>
                 <span class="block lg:hidden btn_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: currentColor;transform: ;msFilter:;"><path d="M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z"></path></svg></span>
                 <span class="hidden lg:block whitespace-nowrap">Télécharger la </span> brochure
             </a>
-            <button class="flex lg:hidden btn__menu text-pantone">
+            <button class="flex lg:hidden btn__menu cursor-pointer text-pantone">
                 {# <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: currentColor;transform: ;msFilter:;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg> #}
                 <i>Menu</i>
             </button>
