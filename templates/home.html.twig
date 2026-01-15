@@ -69,9 +69,24 @@
                     lieu d’exception où chaque détail reflète la qualité de vie recherchée</p>
                 </div>
             </div>
-            <div class="pr-0 md:pr-20 relative">
-                <div class="flex flex-col gap-12">
-                    <img alt="Image" src="{{asset('assets/medias/bg/cadre-unique.webp')}}" class="">
+            <div class="pr-0 md:pr-16 relative">
+                <div class="flex flex-col justify-between gap-12">
+                    {# <img alt="Image" src="{{asset('assets/medias/bg/cadre-unique.webp')}}" class=""> #}
+                    <div class="relative w-full h-full flex-none test-aspect-video overflow-hidden">
+                        <!-- Vidéo -->
+                        <video id="rivageVideo" class="w-full h-full min-h-96 object-cover" muted playsinline loop preload="metadata">
+                            <source src="{{ asset('assets/medias/videos/video-rivage-bleu.mp4') }}" type="video/mp4">
+                            Votre navigateur ne supporte pas la vidéo.
+                        </video>
+
+                        <!-- Bouton fullscreen -->
+                        <button id="fullscreenBtn" type="button" aria-label="Plein écran" class=" absolute top-4 right-4 bg-black/60 hover:bg-black/80 text-white p-3 transition z-10">
+                            <!-- Icône fullscreen -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3"/>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-12 font-secondary-light-italic text-xs">
                         <div class="flex gap-3">
                             <img src="{{asset('assets/medias/icones/svg/supperficie.svg')}}" class="size-12 !max-w-12 !object-contain">
@@ -120,10 +135,13 @@
         <div class="grid lg:grid-cols-7">
             <div class="lg:col-span-5 flex flex-col justify-between gap-8">
                 <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">Localisation</h2>
-                <div class="flex flex-col gap-12 relative">
-                    <img alt="Image" src="{{asset('assets/medias/bg/localisation.webp')}}" class="lg:mr-10 min-h-80 md:min-h-[400px] object-right">
+                <div class="relative lg:pr-10">
+                    <img alt="Image" src="{{asset('assets/medias/bg/localisation.webp')}}" class="min-h-80 md:min-h-[400px] object-right hidden sm:block">
                     <div class="absolute left-0 bottom-0 hidden sm:block">
                         <img alt="Plan" src="{{asset('assets/medias/icones/ribbons-wave.png')}}" class="max-h-40">
+                    </div>
+                    <div class="block md:hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3519.447906818818!2d-3.7716250002364116!3d5.210428384244663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTInMzkuNCJOIDPCsDQ2JzEwLjciVw!5e0!3m2!1sfr!2sci!4v1768502584689!5m2!1sfr!2sci" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
