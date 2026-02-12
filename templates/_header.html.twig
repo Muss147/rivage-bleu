@@ -21,7 +21,7 @@
                     lg:mt-0 
                     lg:py-0
                     lg:border-none 
-                    xl:gap-14 
+                    xl:gap-6 
                     items-center justify-between gap-8 md:gap-10 list-none uppercase h-full">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#presentation">Présentation du projet</a></li>
@@ -32,7 +32,11 @@
             </nav>
         </div>
         <div class="mobil__menu uppercase z-50">
-            <a href="{{asset('assets/docs/plaquette_rivage_bleu.pdf')}}" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-pantone !text-white hover:shadow-md download" download>
+            <a href="https://rivagebleu.pfo-immobilier.com/presentation/" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-pantone !text-white hover:shadow-md download">
+                <span class="block xl:hidden btn_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V6c0-1.1-.9-2-2-2H5C3.9 4 3 4.9 3 6v12c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-4.5l4 4v-11l-4 4z"/></svg></span>
+                <span class="hidden xl:block whitespace-nowrap">Visionner la </span>vidéo
+            </a>
+            <a href="{{asset('assets/docs/plaquette_rivage_bleu.pdf')}}" target="_blank" download class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-pantone !text-white hover:shadow-md download">
                 <span class="block lg:hidden btn_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: currentColor;transform: ;msFilter:;"><path d="M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z"></path></svg></span>
                 <span class="hidden lg:block whitespace-nowrap">Télécharger la </span> brochure
             </a>

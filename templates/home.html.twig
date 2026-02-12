@@ -29,50 +29,33 @@
 <section id="accueil" class="carrousel relative">
     <div class="absolute hidden xl:block inset-y-0 right-0 w-2xl bg-pantone"></div>
     <div class="absolute inset-0 lg:hidden bg-center bg-cover bg-no-repeat" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.4)), url('{{ asset('assets/medias/bg/bord-de-lagune.webp') }}');"></div>
-    <!-- data-aos="zoom-in" data-aos-delay="700" data-aos-duration="700" -->
     <div class="max-w-10/12 mx-auto relative">
         <div class="grid lg:grid-cols-2 gap-8 h-screen">
             <div class="carrousel__title flex flex-col justify-center" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="800">
                 <div class="flex flex-col gap-8 lg:gap-20 w-full text-pantone text-center lg:text-left">
                     <h1 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">Vivez l'exception en bord de lagune</h1>
                     <div class="">
-                        <p class="mb-8">Découvrez Rivage Bleu, un quartier résidentiel haut de gamme et sécurisé,
-                        situé à Grand-Bassam, dans un cadre naturel rare entre lagune et végétation.</p>
+                        <p class="mb-8">Rivage Bleu est un quartier résidentiel haut de gamme développée par PFO Immobilier, proposant des terrains aménagés avec un processus d’acquisition sécurisé, 
+                        garantissant transparence et fiabilité pour l’obtention de votre titre foncier.</p>
                         <a href="#contact" class="text-center uppercase p-3 rounded-full bg-pantone !text-white hover:shadow-md">Contactez-nous</a>
                     </div>
                 </div>
             </div>
             <div class="hidden lg:flex items-center justify-end" data-aos="fade-left" data-aos-delay="1500" data-aos-duration="800">
-                <img alt="Image" src="{{asset('assets/medias/bg/bord-de-lagune.webp')}}" class="!w-full h-2/3 rounded-md">
-                {# <div class="h-2/3 px-8 py-16 flex flex-col justify-between gap-8" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('{{ asset('assets/medias/bg/bord-de-lagune.webp') }}'); background-size: cover;">
-                    <div class="flex items-center justify-center gap-8">
-                        <img alt="icon" src="{{asset('assets/medias/icones/svg/contact.svg')}}" class="size-8">
-                        <h3 class="text-2xl font-bold">Contact</h3>
-                    </div>
-                    <form action="" method="post" class="grid grid-cols-2 gap-x-10 gap-y-8">
-                        <div class="col-span-2 sm:col-span-1">
-                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="nom" placeholder="Nom *">
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="prenom" placeholder="Prénoms *">
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="email" name="email" placeholder="Email *">
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <input class="col-span-2 h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="telephone" placeholder="Numéro de téléphone *">
-                        </div>
-                        <div class="col-span-2"><p class="text-xs">En validant ce formulaire, les données personnelles collectées ci-dessus seront utilisées dans le cadre de votre demande</p></div>
-                        <div class="col-span-2 flex items-start flex-wrap md:flex-nowrap gap-4 md:gap-12">
-                            <label class="flex items-start gap-4" for="donnees_perso">
-                                <input class="" type="checkbox" name="donnees_perso" id="donnees_perso">
-                                <span class="text-xs">J’accepte que le groupe de Rivage Bleu collecte mes données personnelles afin de m’adresser ses
-                                communications en lien avec mon projet. Ces données ne seront jamais à aucune autre société.</span>
-                            </label>
-                            <div class="center md:float-end w-full"><button type="submit" class="bg-pantone uppercase text-center text-white w-full py-2 s px-10">Envoyer</button></div>
-                        </div>
-                    </form>
-                </div> #}
+                <div class="relative w-full h-[500px] overflow-hidden">    
+                    <!-- Vidéo -->
+                    <video id="rivageVideo" class="w-full h-full object-cover" muted playsinline loop preload="metadata">
+                        <source src="{{ asset('assets/medias/videos/video-rivage-bleu.mp4') }}" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                    <!-- Bouton fullscreen -->
+                    <button id="fullscreenBtn" type="button" aria-label="Plein écran" class=" absolute top-4 right-4 bg-black/60 hover:bg-black/80 text-white p-3 transition z-10">
+                        <!-- Icône fullscreen -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="absolute left-0 bottom-0 hidden sm:block">
@@ -81,10 +64,10 @@
     </div>
 </section>
 
-<section id="presentation" class="lg:h-screen py-24 md:py-12">
+<section id="presentation" class="lg:h-screen py-12">
     <div class="max-w-10/12 mx-auto flex items-center h-full">
         <div class="grid lg:grid-cols-2 gap-8">
-            <div class="space-y-10">
+            <div class="space-y-6 md:space-y-10">
                 <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">Découvrez un cadre unique</h2>
                 <div class="">
                     <p class="mb-2 lg:mb-6">Rivage Bleu est un quartier résidentiel haut de gamme s’étendant sur
@@ -103,152 +86,92 @@
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-12 font-secondary-light-italic text-xs">
                     <div class="flex gap-3">
                         <img src="{{asset('assets/medias/icones/svg/supperficie.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">3 Ha</span>
+                        <span class="w-full">
+                            <span class="block h-px w-1/3 md:w-3/4 bg-pantone mb-2"></span>3 Ha
+                        </span>
                     </div>
                     <div class="flex gap-3">
                         <img src="{{asset('assets/medias/icones/svg/lots.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">43 lots prêts à construire</span>
+                        <span class="w-full">
+                            <span class="block h-px w-1/3 md:w-3/4 bg-pantone mb-2"></span>43 lots prêts à construire
+                        </span>
                     </div>
                     <div class="flex gap-3">
                         <img src="{{asset('assets/medias/icones/svg/residence-securisee.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Residence securisée</span>
+                        <span class="w-full">
+                            <span class="block h-px w-1/3 md:w-3/4 bg-pantone mb-2"></span>Residence securisée
+                        </span>
                     </div>
                     <div class="flex gap-3">
                         <img src="{{asset('assets/medias/icones/svg/architecture-urbaine.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Cohérence architecturale urbaine</span>
+                        <span class="w-full">
+                            <span class="block h-px w-1/3 md:w-3/4 bg-pantone mb-2"></span>Cohérence architecturale urbaine
+                        </span>
                     </div>
                     <div class="flex gap-3">
                         <img src="{{asset('assets/medias/icones/svg/vu-panoramique.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Lots avec vu panoramique sur la lagune</span>
+                        <span class="w-full">
+                            <span class="block h-px w-1/3 md:w-3/4 bg-pantone mb-2"></span>Lots avec vu panoramique sur la lagune
+                        </span>
                     </div>
                     <div class="flex gap-3">
                         <img src="{{asset('assets/medias/icones/svg/promenade-arboree.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">1,5 km de promenade arborée</span>
+                        <span class="w-full">
+                            <span class="block h-px w-1/3 md:w-3/4 bg-pantone mb-2"></span>1,5 km de promenade arborée
+                        </span>
                     </div>
                     <div class="flex gap-3">
                         <img src="{{asset('assets/medias/icones/svg/aire-de-jeux.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Aire de jeux</span>
+                        <span class="w-full">
+                            <span class="block h-px w-1/3 md:w-3/4 bg-pantone mb-2"></span>Aire de jeux
+                        </span>
                     </div>
                     <div class="flex gap-3">
                         <img src="{{asset('assets/medias/icones/svg/espace-detente.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Espace détente au bord de la lagune</span>
+                        <span class="w-full">
+                            <span class="block h-px w-1/3 md:w-3/4 bg-pantone mb-2"></span>Espace détente au bord de la lagune
+                        </span>
                     </div>
                 </div>
             </div>
-            <div class="pr-0 md:pr-16 relative">
+            <div class="relative">
                 <div class="h-full">
-                    {# <img alt="Image" src="{{asset('assets/medias/bg/cadre-unique.webp')}}" class=""> #}
-                    <div class="relative w-full h-full flex-none test-aspect-video overflow-hidden">
-                        <!-- Vidéo -->
-                        <video id="rivageVideo" class="w-full h-full min-h-96 lg:min-h-[450px] object-cover" muted playsinline loop preload="metadata">
-                            <source src="{{ asset('assets/medias/videos/video-rivage-bleu.mp4') }}" type="video/mp4">
-                            Votre navigateur ne supporte pas la vidéo.
-                        </video>
-
-                        <!-- Bouton fullscreen -->
-                        <button id="fullscreenBtn" type="button" aria-label="Plein écran" class=" absolute top-4 right-4 bg-black/60 hover:bg-black/80 text-white p-3 transition z-10">
-                            <!-- Icône fullscreen -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="absolute right-0 top-1/6 hidden sm:block">
-                    <img alt="" src="{{asset('assets/medias/icones/ribbons-wave.png')}}" class="max-h-40">
+                    <img alt="Image" src="{{asset('assets/medias/bg/bord-de-lagune.webp')}}" class="w-full h-full min-h-96 lg:min-h-[450px]">
                 </div>
             </div>
-            {# <div class="col-span-2">
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-12 font-secondary-light-italic text-xs">
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/supperficie.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">3 Ha</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/lots.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">43 lots prêts à construire</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/residence-securisee.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Residence securisée</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/architecture-urbaine.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Cohérence architecturale urbaine</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/vu-panoramique.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Lots avec vu panoramique sur la lagune</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/promenade-arboree.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">1,5 km de promenade arborée</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/aire-de-jeux.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Aire de jeux</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/espace-detente.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Espace détente au bord de la lagune</span>
-                    </div>
-                </div>
-            </div> #}
         </div>
     </div>
 </section>
 
-<section id="localisation" class="lg:h-screen py-24 md:py-12">
+<section id="localisation" class="lg:h-screen py-12">
     <div class="max-w-10/12 mx-auto flex items-center h-full">
-        <div class="grid lg:grid-cols-7 lg:gap-10">
-            <div class="lg:col-span-7 space-y-8 mb-8 lg:mb-0">
+        <div class="space-y-8 lg:space-y-10">
+            <div class="space-y-6 md:space-y-8">
                 <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">Localisation</h2>
-                <p class="text-lg md:text-xl">Un emplacement stratégique, entre ville et nature</p>
+                <div class="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
+                    <p class="md:text-lg">Situé à seulement 20 minutes d’Abidjan, Rivage Bleu bénéficie d’un accès direct par l’autoroute de Bassam. <br class="hidden md:block">
+                    En bord de lagune, ce quartier résidentiel allie calme, nature et connectivité. <br>
+                    Proche de commerces, écoles, loisirs et plages emblématiques, il s’inscrit dans une zone en pleine transformation</p>
+                    <a href="https://maps.app.goo.gl/N9jaB9c6vfWjivNq7" target="_blank" class="text-center uppercase p-3 rounded-full bg-pantone !text-white hover:shadow-md">Obtenir l'itinéraire</a>
+                </div>
             </div>
-            <div class="lg:col-span-5 flex flex-col justify-between gap-8">
+            <div class="flex flex-col justify-between gap-8">
                 <div class="relative">
-                    <img alt="Image" src="{{asset('assets/medias/bg/localisation.webp')}}" class="min-h-80 md:min-h-[500px] object-right hidden md:block">
+                    <img alt="Image" src="{{asset('assets/medias/bg/localisation.webp')}}" class="min-h-80 md:min-h-[500px] object-none md:object-left">
                     <div class="absolute left-0 bottom-0 hidden md:block">
                         <img alt="Plan" src="{{asset('assets/medias/icones/ribbons-wave.png')}}" class="max-h-40">
                     </div>
-                    <div class="block md:hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3519.447906818818!2d-3.7716250002364116!3d5.210428384244663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTInMzkuNCJOIDPCsDQ2JzEwLjciVw!5e0!3m2!1sfr!2sci!4v1768502584689!5m2!1sfr!2sci" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
                 </div>
-            </div>
-            <div class="lg:col-span-2 bg-pantone p-12 space-y-8 text-white">
-                <p class="mb-6 lg:mb-8">Situé à seulement 20 minutes d’Abidjan, Rivage Bleu bénéficie d’un accès direct par l’autoroute de
-                Bassam. En bord de lagune, ce quartier résidentiel allie calme, nature et connectivité. Proche de
-                commerces, écoles, loisirs et plages emblématiques, il s’inscrit dans une zone en pleine transformation</p>
-                
-                <div class="hidden md:block h-max">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3519.447906818818!2d-3.7716250002364116!3d5.210428384244663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTInMzkuNCJOIDPCsDQ2JzEwLjciVw!5e0!3m2!1sfr!2sci!4v1768502584689!5m2!1sfr!2sci" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                {# <div class="grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-6 lg:gap-8 font-secondary-light-italic text-xs mt-8">
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/itineraire.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">20 min d’Abidjan</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/aeroport.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">25 min de L’aéroport international FHB</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/svg/plages.svg')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Plages à proximité</span>
-                    </div>
-                </div> #}
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-12 lg:py-20">
-    <div class="max-w-10/12 mx-auto h-full">
-        <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight mb-16">
+<section class="lg:h-screen py-12">
+    <div class="max-w-10/12 mx-auto h-full relative">
+        <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight mb-6 md:mb-16">
             Donnez vie à votre<br class="hidden md:block"> projet immobilier
         </h2>
-
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
             <!-- CARD -->
             <div class="group perspective">
@@ -257,12 +180,12 @@
                     <div class="absolute inset-0 bg-pantone text-white flex flex-col items-center justify-center gap-6 backface-hidden">
                         <img alt="" src="{{asset('assets/medias/icones/svg/domicile-principal.svg')}}" class="w-12 h-12">
                         <h3 class="text-lg font-semibold text-center uppercase">Domicile<br>principal</h3>
-                        <p class="text-sm text-center px-6 opacity-90">Un cadre de vie familial sécurisé et paisible au quotidien</p>
+                        {# <p class="text-sm text-center px-6 opacity-90">Un cadre de vie familial sécurisé et paisible au quotidien</p> #}
                     </div>
                     <!-- FACE ARRIÈRE -->
                     <div class="absolute inset-0 bg-white border-2 border-pantone text-pantone flex flex-col items-center justify-center gap-6 rotate-y-180 backface-hidden">
                         <h3 class="text-lg font-semibold uppercase">Domicile principal</h3>
-                        <p class="text-sm text-center px-6">Un investissement durable pour votre famille dans un cadre naturel privilégié.</p>
+                        <p class="text-sm text-center px-6">Un cadre de vie familial sécurisé et paisible au quotidien</p>
                     </div>
                 </div>
             </div>
@@ -273,12 +196,12 @@
                     <div class="absolute inset-0 bg-pantone text-white flex flex-col items-center justify-center gap-6 backface-hidden">
                         <img alt="" src="{{asset('assets/medias/icones/svg/residence-secondaire.svg')}}" class="w-12 h-12">
                         <h3 class="text-lg font-semibold text-center uppercase">Résidence<br>secondaire</h3>
-                        <p class="text-sm text-center px-6 opacity-90">Votre refuge pour les week-ends et vacances face à la lagune</p>
+                        {# <p class="text-sm text-center px-6 opacity-90">Votre refuge pour les week-ends et vacances face à la lagune</p> #}
                     </div>
                     <!-- FACE ARRIÈRE -->
                     <div class="absolute inset-0 bg-white border-2 border-pantone text-pantone flex flex-col items-center justify-center gap-6 rotate-y-180 backface-hidden">
                         <h3 class="text-lg font-semibold uppercase">Résidence secondaire</h3>
-                        <p class="text-sm text-center px-6">Un investissement durable pour votre famille dans un cadre naturel privilégié.</p>
+                        <p class="text-sm text-center px-6">Votre refuge pour les week-ends et vacances face à la lagune</p>
                     </div>
                 </div>
             </div>
@@ -289,12 +212,12 @@
                     <div class="absolute inset-0 bg-pantone text-white flex flex-col items-center justify-center gap-6 backface-hidden">
                         <img alt="" src="{{asset('assets/medias/icones/svg/placement-patrimonial.svg')}}" class="w-12 h-12">
                         <h3 class="text-lg font-semibold text-center uppercase">Placement<br>patrimonial</h3>
-                        <p class="text-sm text-center px-6 opacity-90">Sécurisez l’avenir de votre famille avec un bien d’exception</p>
+                        {# <p class="text-sm text-center px-6 opacity-90">Sécurisez l’avenir de votre famille avec un bien d’exception</p> #}
                     </div>
                     <!-- FACE ARRIÈRE -->
                     <div class="absolute inset-0 bg-white border-2 border-pantone text-pantone flex flex-col items-center justify-center gap-6 rotate-y-180 backface-hidden">
                         <h3 class="text-lg font-semibold uppercase">Placement patrimonial</h3>
-                        <p class="text-sm text-center px-6">Un investissement durable pour votre famille dans un cadre naturel privilégié.</p>
+                        <p class="text-sm text-center px-6">Sécurisez l’avenir de votre famille avec un bien d’exception</p>
                     </div>
                 </div>
             </div>
@@ -305,20 +228,24 @@
                     <div class="absolute inset-0 bg-pantone text-white flex flex-col items-center justify-center gap-6 backface-hidden">
                         <img alt="" src="{{asset('assets/medias/icones/svg/investissement-foncier.svg')}}" class="w-12 h-12">
                         <h3 class="text-lg font-semibold text-center uppercase">Investissement<br>foncier</h3>
-                        <p class="text-sm text-center px-6 opacity-90">Capitalisez sur la croissance de valorisation immobilière à Grand-Bassam</p>
+                        {# <p class="text-sm text-center px-6 opacity-90">Capitalisez sur la croissance de valorisation immobilière à Grand-Bassam</p> #}
                     </div>
                     <!-- FACE ARRIÈRE -->
                     <div class="absolute inset-0 bg-white border-2 border-pantone text-pantone flex flex-col items-center justify-center gap-6 rotate-y-180 backface-hidden">
                         <h3 class="text-lg font-semibold uppercase">Investissement foncier</h3>
-                        <p class="text-sm text-center px-6">Un investissement durable pour votre famille dans un cadre naturel privilégié.</p>
+                        <p class="text-sm text-center px-6">Capitalisez sur la croissance de valorisation immobilière à Grand-Bassam</p>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="absolute right-0 bottom-0 hidden sm:block">
+            <img alt="" src="{{asset('assets/medias/icones/ribbons-wave.png')}}" class="max-h-40">
+        </div>
     </div>
 </section>
 
-<section class="py-12 lg:py-20">
+{# <section class="py-12 lg:py-20">
     <div class="max-w-10/12 mx-auto h-full relative">
         <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight mb-12">
             Achetez en toute sécurité<br class="hidden md:block"> 
@@ -367,30 +294,32 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
 
-<section id="lots" class="lg:h-screen py-24 md:py-18">
+<section id="lots" class="lg:h-screen py-12">
     <div class="max-w-10/12 mx-auto h-full">
-        <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight mb-8 md:mb-0">
-            Choisissez<br class="hidden md:block"> 
-            votre lot
-        </h2>
+        <div class="flex flex-wrap md:flex-nowrap gap-4 md:gap-8 items-baseline justify-between">
+            <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">
+                Choisissez<br class="hidden md:block"> 
+                votre lot
+            </h2>
 
-        <div class="flex sm:justify-end font-secondary-light-italic">
-            <div class="space-y-6">
-                <p class="font-bold">3 types<br class="hidden md:block"> de lots proposés</p>
-                <div class="flex justify-between text-xs gap-3 md:gap-8">
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/lots-bord-lagune.png')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-pantone">Lots<br>Bord Lagune</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/lots-double-exposition.png')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-[#579e6e] text-[#579e6e]">Lots<br>Double Exposition</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <img src="{{asset('assets/medias/icones/lots-simple.png')}}" class="size-12 !max-w-12 !object-contain">
-                        <span class="border-t border-[#616262] text-[#616262]">Lots<br>Simple</span>
+            <div class="flex sm:justify-end font-secondary-light-italic">
+                <div class="space-y-6">
+                    <p class="font-bold">3 types<br class="hidden md:block"> de lots proposés</p>
+                    <div class="flex justify-between text-xs gap-3 md:gap-8">
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/lots-bord-lagune.png')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-pantone">Lots<br>Bord Lagune</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/lots-double-exposition.png')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-[#579e6e] text-[#579e6e]">Lots<br>Double Exposition</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="{{asset('assets/medias/icones/lots-simple.png')}}" class="size-12 !max-w-12 !object-contain">
+                            <span class="border-t border-[#616262] text-[#616262]">Lots<br>Simple</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -398,14 +327,14 @@
         <div class="mt-8 relative">
             <img alt="Votre lot" src="{{asset('assets/medias/bg/choisissez-votre-lot.webp')}}" class="">
             
-            <div class="absolute right-0 bottom-0 hidden sm:block">
+            {# <div class="absolute right-0 bottom-0 hidden sm:block">
                 <img alt="" src="{{asset('assets/medias/icones/ribbons-wave.png')}}" class="max-h-40">
-            </div>
+            </div> #}
         </div>
     </div>
 </section>
 
-<section class="py-12 lg:py-20">
+{# <section class="py-12 lg:py-20">
     <div class="max-w-10/12 mx-auto h-full relative">
         <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight mb-12">Détails techniques</h2>
         <div class="grid md:grid-cols-5 gap-8 md:gap-16">
@@ -439,9 +368,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
 
-<section id="contact" class="mt-12" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ asset('assets/medias/bg/contact.webp') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; width: 100%; height: 100%;">
+<section id="contact" class="pt-12" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ asset('assets/medias/bg/contact.webp') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; width: 100%; height: 100%;">
     <div class="max-w-10/12 mx-auto flex items-center py-32">
         <div class="grid lg:grid-cols-2 w-full">
             <div class="space-y-10 mb-8 lg:mb-0 text-white">
@@ -497,7 +426,7 @@
         </a>
     </div>
     <div class="bg-pantone p-2 border border-white">
-        <a href="#contact">
+        <a href="{{asset('assets/docs/plaquette_rivage_bleu.pdf')}}" target="_blank" download>
             <img alt="Contact" src="{{asset('assets/medias/icones/svg/form.svg')}}" class="size-6">
         </a>
     </div>
