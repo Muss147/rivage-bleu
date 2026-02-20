@@ -1,5 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    
+    # Redirection ancien domaine → nouveau domaine
+    RewriteCond %{HTTP_HOST} ^rivage-bleu\.unemaf\.com$ [NC]
+    RewriteRule ^(.*)$ https://rivage-bleu.moussa-fofana.com/$1 [L,R=301]
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [QSA,L]
 </IfModule>

@@ -44,7 +44,8 @@
             <div class="hidden lg:flex items-center justify-end" data-aos="fade-left" data-aos-delay="1500" data-aos-duration="800">
                 <div class="relative w-full h-[500px] overflow-hidden">    
                     <!-- Vidéo -->
-                    <video id="rivageVideo" class="w-full h-full object-cover" muted playsinline loop preload="metadata">
+                    <video id="rivageVideo" class="w-full h-full object-cover" muted playsinline loop preload="auto">
+                        <source src="{{ asset('assets/medias/videos/video-rivage-bleu.webm') }}" type="video/webm">
                         <source src="{{ asset('assets/medias/videos/video-rivage-bleu.mp4') }}" type="video/mp4">
                         Votre navigateur ne supporte pas la vidéo.
                     </video>
@@ -149,7 +150,7 @@
             <div class="space-y-6 md:space-y-8">
                 <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">Localisation</h2>
                 <div class="flex flex-wrap md:flex-nowrap items-center justify-between gap-8">
-                    <p class="md:text-lg">Situé à seulement 20 minutes d’Abidjan, Rivage Bleu bénéficie d’un accès direct par l’autoroute de Bassam. 
+                    <p class="">Situé à seulement 20 minutes d’Abidjan, Rivage Bleu bénéficie d’un accès direct par l’autoroute de Bassam. 
                     En bord de lagune, ce quartier résidentiel allie calme, nature et connectivité. 
                     <br>Proche de commerces, écoles, loisirs et plages emblématiques, il s’inscrit dans une zone en pleine transformation.</p>
                     <a href="https://maps.app.goo.gl/N9jaB9c6vfWjivNq7" target="_blank" class="flex-none text-center uppercase p-3 rounded-full bg-pantone !text-white hover:shadow-md">Obtenir l'itinéraire</a>
@@ -168,8 +169,8 @@
 </section>
 
 <section class="lg:h-screen py-12">
-    <div class="max-w-10/12 mx-auto h-full space-y-6 md:space-y-16">
-        <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight md:pb-6">
+    <div class="max-w-10/12 mx-auto h-full space-y-6 md:space-y-20">
+        <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">
             Donnez vie à votre<br class="hidden md:block"> projet immobilier
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
