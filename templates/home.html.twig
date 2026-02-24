@@ -34,10 +34,10 @@
             <div class="carrousel__title flex flex-col justify-center" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="800">
                 <div class="flex flex-col gap-8 lg:gap-20 w-full text-pantone text-center lg:text-left">
                     <h1 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">Vivez l'exception en bord de lagune</h1>
-                    <div class="">
-                        <p class="mb-8">Rivage Bleu est un quartier résidentiel haut de gamme développée par PFO Immobilier, proposant des terrains aménagés avec un processus d’acquisition sécurisé, 
+                    <div class="space-y-28 md:space-y-8">
+                        <p class="">Rivage Bleu est un quartier résidentiel haut de gamme développée par PFO Immobilier, proposant des terrains aménagés avec un processus d’acquisition sécurisé, 
                         garantissant transparence et fiabilité pour l’obtention de votre titre foncier.</p>
-                        <a href="#contact" class="text-center uppercase p-3 rounded-full bg-pantone !text-white hover:shadow-md">Contactez-nous</a>
+                        <a href="#contact" class="transform text-center uppercase py-3 px-8 text-lg lg:text-xl rounded-full bg-pantone !text-white hover:shadow-md animate-shakeLoop">Contactez-nous</a>
                     </div>
                 </div>
             </div>
@@ -168,7 +168,7 @@
     </div>
 </section>
 
-<section class="lg:h-screen py-12">
+<section class="">
     <div class="max-w-10/12 mx-auto h-full space-y-6 md:space-y-20">
         <h2 class="w-full text-[clamp(2rem,5vw,4rem)] leading-tight">
             Donnez vie à votre<br class="hidden md:block"> projet immobilier
@@ -234,7 +234,7 @@
                     <!-- FACE ARRIÈRE -->
                     <div class="absolute inset-0 bg-white border-2 border-pantone text-pantone flex flex-col items-center justify-center gap-6 rotate-y-180 backface-hidden">
                         <h3 class="text-lg font-semibold uppercase">Investissement foncier</h3>
-                        <p class="text-sm text-center px-6">Capitalisez sur la croissance de valorisation immobilière à Grand-Bassam</p>
+                        <p class="text-sm text-center px-6">Profitez du potentiel de valorisation du littoral de Grand-Bassam</p>
                     </div>
                 </div>
             </div>
@@ -385,23 +385,23 @@
                         <img alt="icon" src="{{asset('assets/medias/icones/svg/contact.svg')}}" class="size-8">
                         <h3 class="text-2xl font-bold">Contact</h3>
                     </div>
-                    <form action="" method="post" class="grid grid-cols-2 gap-x-10 gap-y-8">
+                    <form id="contactForm" action="" method="post" class="grid grid-cols-2 gap-x-10 gap-y-8">
                         <div class="col-span-2 sm:col-span-1">
-                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="nom" placeholder="Nom *">
+                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" id="nom" name="nom" required placeholder="Nom *">
                         </div>
                         <div class="col-span-2 sm:col-span-1">
-                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="prenom" placeholder="Prénoms *">
+                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" id="prenom" name="prenom" required placeholder="Prénoms *">
                         </div>
                         <div class="col-span-2 sm:col-span-1">
-                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="email" name="email" placeholder="Email *">
+                            <input class="h-10 border-none w-full bg-[#165889]/20 text-pantone" type="email" id="email" name="email" required placeholder="Email *">
                         </div>
                         <div class="col-span-2 sm:col-span-1">
-                            <input class="col-span-2 h-10 border-none w-full bg-[#165889]/20 text-pantone" type="text" name="telephone" placeholder="Numéro de téléphone *">
+                            <input class="col-span-2 h-10 border-none w-full bg-[#165889]/20 text-pantone" type="tel" id="telephone" name="telephone" required placeholder="Numéro de téléphone *" onkeypress="return event.charCode&gt;=48 &amp;&amp; event.charCode&lt;=57">
                         </div>
                         <div class="col-span-2"><p class="text-xs">En validant ce formulaire, les données personnelles collectées ci-dessus seront utilisées dans le cadre de votre demande</p></div>
                         <div class="col-span-2 flex items-start flex-wrap md:flex-nowrap gap-4 md:gap-12">
                             <label class="flex items-start gap-4" for="donnees_perso">
-                                <input class="" type="checkbox" name="donnees_perso" id="donnees_perso">
+                                <input class="" type="checkbox" name="donnees_perso" id="donnees_perso" required>
                                 <span class="text-xs">J’accepte que le groupe de Rivage Bleu collecte mes données personnelles afin de m’adresser ses
                                 communications en lien avec mon projet. Ces données ne seront jamais à aucune autre société.</span>
                             </label>
@@ -418,8 +418,8 @@
 <div id="f_loader" class="f_loader-container" style="display: none;">
     <div class="f_loader"></div>
 </div>
-
 <!-- Form Loader -->
+
 <div class="fixed inset-y-0 right-0 w-16 flex flex-col justify-center items-center">
     <div class="bg-pantone p-2 border border-b-0 border-white">
         <a href="#contact">
@@ -435,15 +435,17 @@
 
 <!-- Modal de message -->
 <div id="modal" class="modal">
-    <p id="modal-message"></p>
-    <button class="btn close-btn">OK</button>
+    <div class="modal_content">
+        <div id="modal-message" class="mb-6"></div>
+        <button class="close-btn text-center uppercase p-3 min-w-20 rounded-full bg-pantone !text-white hover:shadow-md">OK</button>
+    </div>
 </div>
 {% endblock %}
 
 
 {% block javascripts %}
 {{ parent() }}
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+{# <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> #}
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
