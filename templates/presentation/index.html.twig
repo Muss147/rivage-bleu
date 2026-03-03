@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rivage Beu</title>
+    <link rel="stylesheet" href="{{asset('assets/css/prez_style.css')}}">
+      <!-- ton head -->
+  <style>
+    .controls {
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      border-radius: 12px;
+    }
+
+    /* Spécifique iOS & macOS Safari */
+    @supports (-webkit-touch-callout: none) {
+      .controls {
+        background: rgba(0,0,0,0.88);
+        backdrop-filter: blur(25px) saturate(180%);
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+      #playPause { font-size: 30px; }
+      .btn { padding: 10px; }
+      /* On cache le volume : Safari gère déjà le son */
+      #volume, #mute { display: none; }
+    }
+  </style>
+</head>
+    <body>
+
+        <div class="video-wrapper">
+
+            <video id="player" 
+                poster="{{asset('assets/medias/videos/poster.png')}}" 
+                preload="auto"
+                autoplay 
+                loop  
+                playsinline 
+                webkit-playsinline 
+                muted>
+                <source src="{{asset('assets/medias/videos/rivage_bleu.mp4')}}" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo HTML5.
+            </video>
+
+            <div class="controls">
+
+                <button id="playPause" class="btn">▶</button>
+                <input type="range" id="progress" min="0" max="100" value="0" class="progress">
+                <button id="mute" class="btn">🔇</button>
+                <input type="range" id="volume" min="0" max="1" step="0.05" value="1">
+                <select id="speed" class="btn">
+                    <option value="0.5">0.5×</option>
+                    <option value="1" selected>1×</option>
+                    <option value="1.5">1.5×</option>
+                    <option value="2">2×</option>
+                </select>
+                <button id="fullscreen" class="btn">⛶</button>
+
+            </div>
+        </div>
+
+
+    <script>
+    const video = document.getElementById("player");
+    const playPause = document.getElementById("playPause");
+    const progress = document.getElementById("progress");
+    const mute = document.getElementById("mute");
+    const volume = document.getElementById("volume");
+    const speed = document.getElementById("speed");
+    const fullscreen = document.getElementById("fullscreen");
+
+    // --- Play / Pause ---
+    playPause.addEventListener("click", () => {
+        if (video.paused) {
+            video.play();
+            playPause.textContent = "⏸";
+        } else {
+            video.pause();
+            playPause.textContent = "▶";
+        }
+    });
+
+    // --- Update progress bar ---
+    video.addEventListener("timeupdate", () => {
+        if (!isNaN(video.duration)) {
+            progress.value = (video.currentTime / video.duration) * 100;
+        }
+    });
+
+    // --- Seek video ---
+    progress.addEventListener("input", () => {
+        video.currentTime = (progress.value / 100) * video.duration;
+    });
+
+    // --- Mute ---
+    mute.addEventListener("click", () => {
+        video.muted = !video.muted;
+        mute.textContent = video.muted ? "🔈" : "🔇";
+    });
+
+    // --- Volume (iOS ne permet pas son contrôle) ---
+    volume.addEventListener("input", () => {
+        try {
+            video.volume = volume.value;
+            video.muted = false;
+            mute.textContent = "🔇";
+        } catch(e) {
+            console.warn("Le contrôle du volume est bloqué sur iOS.");
+        }
+    });
+
+    // --- Playback speed ---
+    speed.addEventListener("change", () => {
+        video.playbackRate = speed.value;
+    });
+
+    // --- Fullscreen compatible Safari ---
+    fullscreen.addEventListener("click", () => {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) { 
+            video.webkitRequestFullscreen(); // Safari
+        }
+    });
+    </script>
+
+    <script>
+    // Optionnel : si tu veux aussi une classe JS
+    if (/iPad|iPhone|iPod|Mac/.test(navigator.platform) || 
+        (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
+        document.documentElement.classList.add("ios-macos");
+    }
+    </script>
+
+    </body>
+</html>

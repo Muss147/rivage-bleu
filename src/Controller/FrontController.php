@@ -8,19 +8,21 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class FrontController extends AbstractController
 {
-    #[Route('/', name: 'app_front')]
+    #[Route('/', name: 'home')]
     public function home(): Response
     {
-        return $this->render('home.html.twig', [
-            'controller_name' => 'FrontController',
-        ]);
+        return $this->render('home.html.twig');
     }
 
-    #[Route('/front', name: 'front')]
-    public function index(): Response
+    #[Route('/presentation', name: 'presentation')]
+    public function presentation(): Response
     {
-        return $this->render('front/index.html.twig', [
-            'controller_name' => 'FrontController',
-        ]);
+        return $this->render('presentation/index.html.twig');
+    }
+
+    #[Route('/flowbite', name: 'flowbite')]
+    public function flowbite(): Response
+    {
+        return $this->render('flowbite/index.html.twig');
     }
 }

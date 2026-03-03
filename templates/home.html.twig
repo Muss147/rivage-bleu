@@ -6,11 +6,7 @@
 {{ parent() }}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<style>
-    .leaflet-control-attribution.leaflet-control {
-        display: none;
-    }
-</style>
+<style></style>
 {% endblock %}
 
 {% block body %}
@@ -38,7 +34,7 @@
                         <p class="">Rivage Bleu est un quartier résidentiel haut de gamme développée par PFO Immobilier, proposant des terrains aménagés avec un processus d’acquisition sécurisé, 
                         garantissant transparence et fiabilité pour l’obtention de votre titre foncier.</p>
                         <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                            <a href="https://rivagebleu.pfo-immobilier.com/presentation/" target="_blank" class="lg:hidden text-center uppercase py-3 px-8 rounded-full bg-pantone !text-white hover:shadow-md">Visionnez la vidéo</a>
+                            <a href="{{path('presentation')}}" target="_blank" class="lg:hidden text-center uppercase py-3 px-8 rounded-full bg-pantone !text-white hover:shadow-md">Visionnez la vidéo</a>
                             <a href="#contact" class="transform text-center uppercase py-3 px-8 text-lg lg:text-xl rounded-full bg-pantone !text-white hover:shadow-md animate-shakeLoop">Contactez-nous</a>
                         </div>
                     </div>
@@ -448,7 +444,6 @@
 
 {% block javascripts %}
 {{ parent() }}
-{# <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> #}
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
